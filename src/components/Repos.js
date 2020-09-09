@@ -36,11 +36,11 @@ const Repos = () => {
   })
   .map((item) => {
     return {...item,value:item.stars};
-  });
+  })
+  .slice(0, 5);
 
   
   // stars, forks
-
   let {stars, forks} = repos.reduce(
     (total, item)=>{
      const {stargazers_count, name, forks} = item;
