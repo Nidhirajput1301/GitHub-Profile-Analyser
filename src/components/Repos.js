@@ -4,6 +4,7 @@ import { GithubContext } from '../context/context';
 import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 const Repos = () => {
   const{repos} = React.useContext(GithubContext);
+  const total_star = 0
   
   const languages = repos.reduce((total, item)=>{
     const { language, stargazers_count } = item;
@@ -53,7 +54,7 @@ const Repos = () => {
      forks:{},
     }
   );
-
+  console.log(stars);
   stars = Object.values(stars).slice(-5).reverse();
   forks = Object.values(stars).slice(-5).reverse();
 

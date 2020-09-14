@@ -6,7 +6,28 @@ import { FiUsers, FiUserPlus } from 'react-icons/fi';
 
 const UserInfo = () => {
   const {githubUser} = React.useContext(GithubContext);
-  const {public_repos, followers, following, public_gists } = githubUser;
+  const {public_repos, followers, following, public_gists, } = githubUser;
+
+  // let repoNodes = repos?.data?.user?.repositories?.nodes;
+	// // let totalCommit = 0
+	// let totalStar = 0;
+	// let totalFork = 0;
+
+  // let simplified_repo_data = [];
+  // repoNodes.forEach((repos) => {
+	// 	totalStar += repos?.stargazers?.totalCount ?? 0;
+  //   totalFork += repos?.forks?.totalCount ?? 0;
+
+  //   simplified_repo_data.push({
+	// 		name: repos?.name ?? "-",
+	// 		commits: repos?.contributions?.target?.userCommits?.totalCount ?? 0,
+	// 		forks: repos?.forks?.totalCount ?? 0,
+	// 		stars: repositories?.stargazers?.totalCount ?? 0,
+	// 	});
+  // });
+
+
+  
   
   const items = [
     {
@@ -32,7 +53,14 @@ const UserInfo = () => {
       icon: <GoGist className="icon" />, label: 'gists',
       value: public_gists,
       color: 'yellow',
-    }
+    },
+    // {
+    //   id: 5,
+    //   icon: <GoGist className="icon" />, label: 'commits',
+    //   value: forks,
+    //   color: 'yellow',
+    // }
+
   ]
 
   return <section className="section">
@@ -47,7 +75,7 @@ const UserInfo = () => {
 const Item = ({ icon, label, value, color }) => {
   return (
     <article className="item">
-      <span className={color}></span>
+      <span className={color}>{icon}</span>
       <div>
         <h3>{value}</h3>
         <p>{label}</p>

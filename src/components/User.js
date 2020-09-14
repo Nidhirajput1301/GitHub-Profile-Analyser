@@ -8,11 +8,12 @@ const User = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
+        
        <Card></Card>
-       <ReposMe></ReposMe>
-       <Followers></Followers>
        <Following></Following>
-     </Wrapper>
+       <Followers></Followers>
+       <ReposMe></ReposMe>
+      </Wrapper>
     </section>);
 };
 
